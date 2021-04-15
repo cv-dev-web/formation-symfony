@@ -1,0 +1,26 @@
+div.container
+{
+    margin-top: 20px;
+}
+
+div.bandeau-title
+{
+    padding: 2em;
+    background-size: cover;
+    background-position: center center;
+}
+div.bandeau-title h1, div.bandeau p
+{
+    color:#fff;
+    text-shadow:3px 3px 3px rgba(0,0,0,0.5); 
+}
+
+div.carousel-caption
+{
+    text-shadow:3px 3px 3px rgba(0,0,0,0.5);
+}
+
+div.carousel-caption h5
+{
+   color:#fff; 
+}
