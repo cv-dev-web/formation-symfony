@@ -5,6 +5,7 @@ div.container
 
 div.bandeau-title
 {
+    
     padding: 2em;
     background-size: cover;
     background-position: center center;
@@ -23,4 +24,24 @@ div.carousel-caption
 div.carousel-caption h5
 {
    color:#fff; 
+}
+
+.avatar
+{
+    max-width: 128px;
+    max-height: 128px;
+    border-radius: 50%;
+
+}
+
+.avatar-medium
+{
+    max-height: 64px;
+    max-width: 64px;
+}
+
+.avatar-mini
+{
+    max-width: 24px;
+    max-height: 24px;
 }
