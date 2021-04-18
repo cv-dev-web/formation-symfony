@@ -10,7 +10,7 @@ div.bandeau-title
     background-size: cover;
     background-position: center center;
 }
-div.bandeau-title h1, div.bandeau p
+div.bandeau-title h1, div.bandeau-title p
 {
     color:#fff;
     text-shadow:3px 3px 3px rgba(0,0,0,0.5); 

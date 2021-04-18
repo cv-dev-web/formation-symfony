@@ -13,6 +13,10 @@
             <strong>{{ad.idees}} idées</strong> pour <strong>{{ad.price}}&euro;</strong> /par projet
         </p>
         <a href="#" class="btn btn-primary">Réserver !</a>
+        {% if app.user and app.user == ad.author %}
+            <a href="{{ path('ads_edit', {'slug':ad.slug}) }}" class="btn btn-secondary ml-3">Modifier l'invention</a>
+            <a href="{{ path('ads_delete',{'slug':ad.slug}) }}" class="btn btn-danger ml-3" onclick="return confirm(`Êtes vous sur de vouloir supprimer l'invention : {{ ad.title }} ?`)">Supprimer l'invention</a>
+        {% endif %}
     </div>
 </div>
 <div class="container">
