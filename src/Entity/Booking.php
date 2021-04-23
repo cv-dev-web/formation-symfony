@@ -36,7 +36,7 @@ class Booking
     /**
      * @ORM\Column(type="datetime")
      * @Assert\Date(message="Attention la date d'arrivée doit être au bon format !")
-     * @Assert\GreaterThan("Today",message="La date choisie doit être superieur à celle du jour")
+     * @Assert\GreaterThan("Today",message="La date choisie doit être superieur à celle du jour",groups={"front"})
      */
     private $startDate;
 
@@ -65,6 +65,7 @@ class Booking
     /**
      * Callback appelé à chaque fois qu'on créer une reservation
      * @ORM\prePersist
+     * @ORM\PreUpdate
      *
      * @return void
      */
