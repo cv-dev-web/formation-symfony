@@ -18,11 +18,11 @@
                 </tr>
             </thead>
             <tbody>
-                {% for comment in comments %}
+                {% for comment in pagination.data %}
                 <tr>
                     <td>{{comment.id}}</td>
                     <td>{{comment.createdAt | date('d/m/Y H:i')}}</td>
-                    <td><img src="{{comment.author.picture}}" class="avatar avatar-mini" alt="Avatar de {{comment.author.fullName}}"/>{{comment.author.fullName}}</td>
+                    <td><img src="{{comment.author.picture}}" class="avatar avatar-mini mr-2" alt="Avatar de {{comment.author.fullName}}"/>{{comment.author.fullName}}</td>
                     <td>{{comment.content}}</td>
                     <td><span class="badge badge-secondary">{{comment.rating}}</span></td>
                     <td>{{comment.ad.title}}</td>
@@ -37,5 +37,6 @@
                 {% endfor %}
             </tbody>
         </table>
+        {{ pagination.display() }}
     </div>
 {% endblock %}
