@@ -9,6 +9,7 @@
 {% endblock %}
 
 {% block body %}
+
 <div class="container">
     <div class="jumbotron mt-5">
         <h1 class="display-3">Bienvenue Sur SynBnB!</h1>
@@ -21,108 +22,29 @@
     </div>
     <h2 class="h1 my-5">Nos inventions Stars</h2>
     <div class="row">
-        <div class="col-md-4">
-            <div class="card bg-light mb-3">
-                <div class="card-header text-center">
-                    3 trouvailles, <strong>25 &euro;/ projets</strong>  <br/>
-                    <small>pas encore notéS</small>  
-                </div>
-                <img src="https://picsum.photos/640/480/?38079" alt="Image des trouvailles" 
-                style="height: 200px; width: 100%; display : block "/>
-                <div class="card-body">
-                    <h4 class="card-title">
-                        trouvaille Exceptionnelle !!
-                    </h4>
-                    <p class="card-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis porro cupiditate totam temporibus labore quam explicabo perspiciatis quas soluta at?
-                    </p>
-                    <a href="#" class="btn btn-primary">En savoir plus</a>
-
-                </div>
-                    
-                </body>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card bg-light mb-3">
-                <div class="card-header text-center">
-                    3 trouvailles, <strong>25 &euro;/ projets</strong>  <br/>
-                    <small>pas encore notéS</small>  
-                </div>
-                <img src="https://picsum.photos/640/480/?38089" alt="Image des trouvailles" 
-                style="height: 200px; width: 100%; display : block "/>
-                <div class="card-body">
-                    <h4 class="card-title">
-                        trouvaille Exceptionnelle !!
-                    </h4>
-                    <p class="card-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis porro cupiditate totam temporibus labore quam explicabo perspiciatis quas soluta at?
-                    </p>
-                    <a href="#" class="btn btn-primary">En savoir plus</a>
-
-                </div>
-                    
-                </body>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card bg-light mb-3">
-                <div class="card-header text-center">
-                    3 trouvailles, <strong>25 &euro;/ projets</strong>  <br/>
-                    <small>pas encore notéS</small>  
-                </div>
-                <img src="https://picsum.photos/640/480/?38095" alt="Image des trouvailles" 
-                style="height: 200px; width: 100%; display : block "/>
-                <div class="card-body">
-                    <h4 class="card-title">
-                        trouvaille Exceptionnelle !!
-                    </h4>
-                    <p class="card-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis porro cupiditate totam temporibus labore quam explicabo perspiciatis quas soluta at?
-                    </p>
-                    <a href="#" class="btn btn-primary">En savoir plus</a>
-
-                </div>
-                    
-                </body>
-            </div>
-        </div>
-    
-    
-    
+         {% for data in ads %}
+            {% include 'ad/_ad.html.twig' with {'ad':data.projet} %}
+         {% endfor %}   
     </div>
     <h2 class="h1 my-5">Nos inventeurs Stars !!</h2>
+   
     <div class="row">
+        {% for data in users %}
         <div class="col">
             <div class="card border-secondary mb-3">
                 <div class="card-body">
-                    <h4 class="card-title">Lior Chamla</h4>
+                    <h4 class="card-title">{{data.user.fullName}}</h4>
                     <hr>
                     <div class="card-text">
-                        <img src="https://randomuser.me/api/portraits/men/9.jpg" alt="Les Inventeurs de l'année ^^"
+                        <img src="{{data.user.picture}}" alt="Avatar de {{data.user.fullName}}"
                         class="avatar float-left mr-3">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, quo.</p>
-                        <a href="#" class="btn btn-success float-right">En savoir plus ></a>
+                        <p>{{data.user.introduction}}</p>
+                        <a href="{{ path('user_show',{'slug':data.user.slug})}}" class="btn btn-success float-right">En savoir plus ></a>
                     </div>
-
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div class="card border-secondary mb-3">
-                <div class="card-body">
-                    <h4 class="card-title">Lior Chamla</h4>
-                    <hr>
-                    <div class="card-text">
-                        <img src="https://randomuser.me/api/portraits/men/25.jpg" alt="Les Inventeurs de l'année ^^"
-                        class="avatar float-left mr-3">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, quo.</p>
-                        <a href="#" class="btn btn-success float-right">En savoir plus ></a>
-                    </div>
-
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}
