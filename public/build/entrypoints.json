@@ -1,0 +1,27 @@
+{
+  "entrypoints": {
+    "js/ad": {
+      "js": [
+        "/build/runtime.68a6a20a.js",
+        "/build/755.f5cf308f.js",
+        "/build/js/ad.b16b2f8e.js"
+      ]
+    },
+    "js/app": {
+      "js": [
+        "/build/runtime.68a6a20a.js",
+        "/build/755.f5cf308f.js",
+        "/build/734.1db42575.js",
+        "/build/js/app.0c883ba1.js"
+      ]
+    },
+    "css/app": {
+      "js": [
+        "/build/runtime.68a6a20a.js"
+      ],
+      "css": [
+        "/build/css/app.386d1fee.css"
+      ]
+    }
+  }
+}
